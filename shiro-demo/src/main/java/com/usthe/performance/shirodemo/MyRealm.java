@@ -17,9 +17,9 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
-        if (!"admin".equals(username)) {
-            throw new UnknownAccountException("账户不存在!");
+        if (!"root".equals(username)) {
+            throw new UnknownAccountException("unknown account!");
         }
-        return new SimpleAuthenticationInfo(username, "123456", getName());
+        return new SimpleAuthenticationInfo(username, "23456", getName());
     }
 }
