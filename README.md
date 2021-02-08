@@ -1,4 +1,4 @@
-# Benchmark Test   
+# Benchmark Test | [中文文档](README_CN.md)    
 
 **sureness VS shiro VS spring security**   
 
