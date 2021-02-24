@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.Md4PasswordEncoder;
 
 /**
  * @author tomsun28
@@ -21,8 +21,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         // 密码使用BCryptPasswordEncoder()方法验证，
         // 因此存储的密码也需要BCryptPasswordEncoder().encode(明文密码)方法加密密码
         auth.userDetailsService(username -> User.withUsername("root")
-                .password(new BCryptPasswordEncoder().encode("23456"))
-                .roles("role2").build()).passwordEncoder(new BCryptPasswordEncoder());
+                .password(new Md4PasswordEncoder().encode("23456"))
+                .roles("role2").build()).passwordEncoder(new Md4PasswordEncoder());
     }
 
     @Override

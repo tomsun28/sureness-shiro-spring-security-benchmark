@@ -22,9 +22,17 @@
 
 ### 测试结论       
 
-**基准测试显示sureness对比无权限框架应用损耗0.026ms性能，shiro损耗0.088ms,spring security损耗44.813ms，
-相比之下sureness基本不消耗性能，且性能(TPS损耗)是shiro的3倍，spring security的1700倍**     
-**性能差距会随着api匹配链的增加而进一步拉大**  
+**基准测试显示sureness对比无权限框架应用损耗0.026ms性能，shiro损耗0.088ms,spring security损耗0.116ms，
+相比之下sureness基本不消耗性能，且性能(参考TPS损耗)是shiro的3倍，spring security的4倍**        
+
+**性能差距会随着api匹配链的增加而进一步拉大**    
+
+
+### 其它  
+
+**当使用spring security默认的BCryptPasswordEncoder加解密时，spring security损耗44.813ms，sureness性能为spring security的1700倍**    
+详见[另一个基准测试](https://github.com/tomsun28/sureness-shiro-spring-security-benchmark/tree/bcrypt)       
+
    
 
 
