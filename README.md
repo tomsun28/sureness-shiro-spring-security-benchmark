@@ -24,10 +24,14 @@ The demo code for testing their performance.
 
 Compared with frameless protection, sureness only consumes a little application performance.  
 
-Benchmark test shows sureness to lose 0.026ms performance compared to frameless application, shiro lose 0.088ms, spring security lose 44.813ms.   
+Benchmark test shows sureness to lose 0.026ms performance compared to frameless application, shiro lose 0.088ms, spring security lose 0.116ms.   
 
-In contrast, sureness basically does not consume performance, and the performance (TPS loss) is 3 times that of shiro and 1700 times that of spring security.   
+In contrast, sureness basically does not consume performance, and the performance (TPS loss) is 3 times that of shiro and 4 times that of spring security.   
 
 **The performance gap will be further widened as the api matching chain increases.**       
 
+### Other    
 
+**When using spring security's default BCryptPasswordEncoder for encryption and decryption, spring security loses 44.813ms, and the sureness performance is 1700 times that of spring security**    
+
+Detail see [Another Benchmark](https://github.com/tomsun28/sureness-shiro-spring-security-benchmark/tree/bcrypt)    
